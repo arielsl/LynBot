@@ -65,7 +65,7 @@ async def purge(ctx, i):
     return await bot.delete_messages(msgs)
 
 """
-The bot runs using the token given by Discrod to the application
+The bot runs using the token given by Discord to the application
 It is not included for security purposes
 """
 bot.run(tokens.BOT_TOKEN)
