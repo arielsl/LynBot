@@ -1,0 +1,8 @@
+#ignore the tokens files as it includes user info
+tokens.py
+
+#ignore images
+imgs/
+
+#ignore compile files
+__pycache__/
