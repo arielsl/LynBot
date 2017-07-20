@@ -34,7 +34,7 @@ async def on_ready():
 
 """
 Command: !hello
-The hello command returns the greeting to the user and posts an image saved as a local resource
+This command returns the greeting to the user and posts an image saved as a local resource
 Local resource images are not shared
 """
 @bot.command(pass_context=True)
@@ -46,23 +46,30 @@ async def hello(ctx):
 
 """
 Command: !purge x
-This command deletes the x last messages sent to the channel
-Still need to fix errors when no or multiple arguments are passed
+This command deletes the x last messages sent to the channel, only between 2 to 100
+x must be an integer, with multiple arguments, it only reads the first one
+Command: !purge
+This command deletes the last 100 messages in the channel
 """
 @bot.command(pass_context=True)
-async def purge(ctx, i):
+async def purge(ctx, *i):
     msgs = []
-    mlimit = 100
-    if i is None:
+    mlimit = None
+    if len(i) == 0:
         mlimit = 100
     else:
         try:
-            mlimit = int(i)
+            mlimit = int(i[0])
         except Exception:
-            await bot.say("Please write the number of messages to delete")
-    async for x in bot.logs_from(ctx.message.channel, limit = mlimit):
-        msgs.append(x)
-    return await bot.delete_messages(msgs)
+            await bot.say("Please write a number of messages to delete")
+    if mlimit is None:
+        return
+    elif mlimit < 2 or  mlimit > 100:
+        return await bot.say("Can only delete between 2 to 100 messages")
+    else:
+        async for x in bot.logs_from(ctx.message.channel, limit = mlimit):
+            msgs.append(x)
+        return await bot.delete_messages(msgs)
 
 """
 The bot runs using the token given by Discord to the application
