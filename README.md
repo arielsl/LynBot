@@ -42,7 +42,7 @@ Shares a link to the Serenes Forest Cipher page for the given deck number, if no
 
 ## Bot Invitation
 
-You can invite the bot to your server using the following [link](https://discordapp.com/oauth2/authorize?client_id=337535718274629645&scope=bot "Invitation Link")
+You can invite the bot to your server using the following [link](https://discordapp.com/oauth2/authorize?client_id=337535718274629645&scope=bot "Invitation Link")  
 **Note:** the bot is often offline due to still being in development, feel free to run it for yourself.
 
 ---
