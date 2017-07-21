@@ -13,6 +13,7 @@ The external libraries included are the ones recommended in discord.py documenta
 import discord
 import tokens
 from discord.ext.commands import Bot
+import urlchecker
 
 """
 The selected prefix for the is the standard !
@@ -70,6 +71,62 @@ async def purge(ctx, *i):
         async for x in bot.logs_from(ctx.message.channel, limit = mlimit):
             msgs.append(x)
         return await bot.delete_messages(msgs)
+
+"""
+command: !serenes term term2 term3
+This command returns a url of a Serene's Forest website search with the given terms
+command: !serenes
+This command returns the url for the Serene's Forest website
+"""
+@bot.command()
+async def serenes(*args):
+    if len(args) == 0:
+        url = "https://serenesforest.net"
+        return await bot.say(url)
+    else:
+        url = "https://serenesforest.net/?s={s}".format(s = "+".join(args))
+        return await bot.say(url)
+
+
+"""
+command: !cipher name
+This command returns a url to the Serene's Forest Cipher page with the given character name
+command: !cipher
+This command returns a url to the Serene's Forest Cipher page
+"""
+@bot.command()
+async def cipher(*args):
+    if len(args) == 0:
+        url = "https://serenesforest.net/wiki/index.php/Fire_Emblem_TCG"
+        return await bot.say(url)
+    else:
+        card = args[0]
+        url = "https://serenesforest.net/wiki/index.php/{name}_%28Cipher%29".format(name=card.capitalize())
+        if urlchecker.url_exits(url):
+            return await bot.say(url)
+        else:
+            return await bot.say("Character doesn't seem to exist in Cipher")
+
+
+"""
+command:!card name
+This command searches for the card image in the Serene's Forest Cipher Page
+"""
+@bot.command(pass_context=True)
+async def card(ctx, *args):
+    channel = ctx.message.channel
+    if len(args) == 0:
+        return await bot.say("Please enter the card name, B01/S01/S02 require card rarity"
+                             "Example: B07-007 or S01-001ST\n")
+    else:
+        card = args[0]
+        url = "https://serenesforest.net/wiki/index.php/File:{number}.png".format(number=card.capitalize())
+        imgurl = urlchecker.get_card_image(url, card.capitalize())
+        if imgurl is None:
+            return await bot.say("Card doesn't seem to exist in Cipher")
+        else:
+            return await bot.say(imgurl)
+
 
 """
 The bot runs using the token given by Discord to the application
