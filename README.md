@@ -4,12 +4,12 @@
 ---
 
 Lyn Bot is currently written purely in python with the possibility of using another language in the near future.
-The bot was created using the [discord.py](https://github.com/Rapptz/discord.py "discord.py") library to interact with the [Discord API](https://discordapp.com/developers/docs/reference"Discord API")
+The bot was created using the [discord.py](https://github.com/Rapptz/discord.py "discord.py") library to interact with the [Discord API](https://discordapp.com/developers/docs/reference "Discord API")
 
 ---
 
 ## Commands
-The following commands are available at the moment. Most links and info are taken from [Serenes Forest](http://serenesforest.net/"Serenes Forest"):
+The following commands are available at the moment. Most links and info are taken from [Serenes Forest](http://serenesforest.net/ "Serenes Forest"):
 
 #### !help
 Sends a message to the user with the available commands.
