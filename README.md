@@ -33,7 +33,7 @@ Shares an image to the given Cipher card, if no number is provided it returns an
 Shares a link to the Serenes Forest Cipher page for the color in the game, if no color is provided it lists the current available colors.
 
 #### booster x
-Shares a link to the Serenese Forest Cipher page for the given bosster number, if no number is provided it lists the current avaible boosters.
+Shares a link to the Serenese Forest Cipher page for the given booster number, if no number is provided it lists the current avaible boosters.
 
 #### !deck x
 Shares a link to the Serenes Forest Cipher page for the given deck number, if no number is provided it lists the current available decks.
