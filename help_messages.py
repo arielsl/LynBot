@@ -2,13 +2,13 @@
 This class contains strings used throughout the bot to help clean up the code
 """
 
-help_message = "```Hello, here are the commands for the bot. Note: SF stands for Serene's Forest\n\n" \
+help_message = "```Hello, here are the commands for the bot. Note: SF stands for Serenes Forest\n\n" \
                "!help: sends this message to the user asking for help.\n\n" \
                "!hello: a greeting message is displayed along with an image\n\n" \
                "!purge x: delete x amount of previous messages, if no amount is provided the bot deletes 100 messages\n\n" \
-               "!serene s: shares a link to SF with the given search query, if no query is provided it returns a link to the main SF page\n\n" \
+               "!serenes s: shares a link to SF with the given search query, if no query is provided it returns a link to the main SF page\n\n" \
                "!cipher name: shares link to the SF Cipher page for the given character, if no name is provided it returns a link to the main SF Cipher page\n\n" \
-               "!card number: shares an image to given Cipher card, if no number is provided it returns an example\n\n" \
+               "!card number: shares an image to the given Cipher card, if no number is provided it returns an example\n\n" \
                "!color color: shares a link to the SF Cipher page for the color in the game, if no color is provided it lists the current available colors\n\n" \
                "!booster [1-9]: shares a link to the SF Cipher page for the given bosster number, if no number is provided it lists the current avaible boosters\n\n" \
                "!deck [1-9]: shares a link to the SF Cipher page for the given deck number, if no number is provided it lists the current available decks```"

@@ -90,20 +90,20 @@ command: !serenes
 This command returns the url for the Serene's Forest website
 """
 @bot.command()
-async def serene(*args):
+async def serenes(*args):
     if len(args) == 0:
-        url = help_messages.serene_home
+        url = help_messages.serenes_home
         return await bot.say(url)
     else:
-        url = help_messages.serene_search.format(s="+".join(args))
+        url = help_messages.serenes_search.format(s="+".join(args))
         return await bot.say(url)
 
 
 """
 command: !cipher name
-This command returns a url to the Serene's Forest Cipher page with the given character name
+This command returns a url to the Serenes Forest Cipher page with the given character name
 command: !cipher
-This command returns a url to the Serene's Forest Cipher page
+This command returns a url to the Serenes Forest Cipher page
 """
 @bot.command()
 async def cipher(*args):
@@ -121,7 +121,7 @@ async def cipher(*args):
 
 """
 command:!card name
-This command searches for the card image in the Serene's Forest Cipher Page
+This command searches for the card image in the Serenes Forest Cipher Page
 """
 @bot.command()
 async def card(*args):
@@ -138,7 +138,7 @@ async def card(*args):
 
 """
 command: !color colorName
-This command returns a url for the given color cards in Serene's Forest
+This command returns a url for the given color cards in Serenes Forest
 """
 @bot.command()
 async def color(*args):
@@ -155,7 +155,7 @@ async def color(*args):
 
 """
 command: !booster x
-This command returns a url for the given booster series in Serene's Forest
+This command returns a url for the given booster series in Serenes Forest
 """
 @bot.command()
 async def booster(*args):
@@ -176,7 +176,7 @@ async def booster(*args):
 
 """
 command: !deck x
-This command returns a url for the given starter deck in Serene's Forest
+This command returns a url for the given starter deck in Serenes Forest
 """
 @bot.command()
 async def deck(*args):
