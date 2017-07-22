@@ -15,6 +15,7 @@ import tokens
 from discord.ext.commands import Bot
 import urlhelper
 import help_messages
+import embedhelper
 
 """
 The selected prefix for the is the standard !
@@ -43,7 +44,7 @@ bot.remove_command('help')
 @bot.command(pass_context=True)
 async def help(ctx):
     user = ctx.message.author
-    return await bot.send_message(user, help_messages.help_message)
+    return await bot.send_message(user, embed=embedhelper.embed_help_mssg())
 
 """
 This command returns the greeting to the user and posts an image saved as a local resource
@@ -140,15 +141,17 @@ async def card(*args):
 command: !color colorName
 This command returns a url for the given color cards in Serenes Forest
 """
-@bot.command()
-async def color(*args):
+@bot.command(pass_context=True)
+async def color(ctx, *args):
+    channel = ctx.message.channel
     if len(args) == 0:
-        return await bot.say(help_messages.color_help)
+        return await bot.send_message(channel, embed=embedhelper.embed_color_mssg())
     else:
         color_given = args[0]
         url = help_messages.color_url.format(color=color_given.capitalize())
         if urlhelper.url_exits(url):
-            return await bot.say(url)
+            em = embedhelper.embed_color_given_mssg(url, color_given.capitalize())
+            return await bot.send_message(channel, embed=em)
         else:
             return await bot.say(help_messages.color_error)
 

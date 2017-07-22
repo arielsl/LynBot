@@ -2,7 +2,6 @@
 tokens.py
 
 #ignore images
-imgs/
 
 #ignore compile files
 __pycache__/

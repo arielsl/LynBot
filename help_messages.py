@@ -1,25 +1,47 @@
 """
 This class contains strings used throughout the bot to help clean up the code
 """
+color_file = "res/color.txt"
+game_file = "res/game.txt"
+heroes_file = "res/heroes.txt"
+heroes_a_file = "res/heroes_a.txt"
+heroes_b_file = "res/heroes_b.txt"
+heroes_c_file = "res/heroes_c.txt"
+heroes_seal_file = "res/heroes_seal.txt"
+heroes_skill_file = "res/heroes_skill.txt"
+heroes_support_file = "res/heroes_support.txt"
+heroes_weapons_file = "res/heroes_a\weapons.txt"
 
-help_message = "```Hello, here are the commands for the bot. Note: SF stands for Serenes Forest\n\n" \
-               "!help: sends this message to the user asking for help.\n\n" \
-               "!hello: a greeting message is displayed along with an image\n\n" \
-               "!purge x: delete x amount of previous messages, if no amount is provided the bot deletes 100 messages\n\n" \
-               "!serenes s: shares a link to SF with the given search query, if no query is provided it returns a link to the main SF page\n\n" \
-               "!cipher name: shares link to the SF Cipher page for the given character, if no name is provided it returns a link to the main SF Cipher page\n\n" \
-               "!card number: shares an image to the given Cipher card, if no number is provided it returns an example\n\n" \
-               "!color color: shares a link to the SF Cipher page for the color in the game, if no color is provided it lists the current available colors\n\n" \
-               "!booster [1-9]: shares a link to the SF Cipher page for the given bosster number, if no number is provided it lists the current avaible boosters\n\n" \
-               "!deck [1-9]: shares a link to the SF Cipher page for the given deck number, if no number is provided it lists the current available decks```"
+
+
+
+
+help_message = ["**!help:** sends this message to the user asking for help.\n\n"
+               "**!hello:** a greeting message is displayed along with an image\n\n"
+               "**!purge x:** delete x amount of previous messages, if no amount is provided the bot deletes 100 messages",
+               "**!serenes s:** shares a link to SF with the given search query, if no query is provided it returns a link to the main SF page",
+               "**!cipher name:** shares link to the SF Cipher page for the given character, if no name is provided it returns a link to the main SF Cipher page\n\n"
+               "**!card number:** shares an image to the given Cipher card, if no number is provided it returns an example\n\n"
+               "**!color color:** shares a link to the SF Cipher page for the color in the game, if no color is provided it lists the current available colors\n\n"
+               "**!booster [1-9]:** shares a link to the SF Cipher page for the given booster number, if no number is provided it lists the current avaible boosters\n\n"
+               "**!deck [1-9]:** shares a link to the SF Cipher page for the given deck number, if no number is provided it lists the current available decks"]
+
+all_info_from_serenes = "All information from Serenes Forest"
+
+
+footer_text = "For any requests or error reporting please contact me."
+
 
 hi_there = "Hi there, stranger!"
+
+
+
 
 purge_error = "Please write a number of messages to delete"
 purge_limit = "Can only delete between 2 to 100 messages"
 
-serene_home = "https://serenesforest.net"
-serene_search = "https://serenesforest.net/?s={s}"
+serenes_home = "https://serenesforest.net"
+serenes_search = "https://serenesforest.net/?s={s}"
 
 cipher_home = "https://serenesforest.net/wiki/index.php/Fire_Emblem_TCG"
 cipher_character = "https://serenesforest.net/wiki/index.php/{name}_%28Cipher%29"
@@ -31,17 +53,16 @@ card_file = "https://serenesforest.net/wiki/index.php/File:{number}.png"
 card_error = "Card doesn't seem to exist in Cipher"
 card_img_prefix = "https://serenesforest.net/"
 
-color_help = "```There are currently 8 colors available for Cipher:\n\n" \
-             "Red: Shadow Dragon and the Blade of Light, Shadow Dragon, Mystery of the Emblem, New Mystery of the Emblem, Echoes: Shadows of Valentia, Gaiden and Tokyo Mirage Sessions ♯FE\n\n" \
-             "Blue: Awakening, #FE Genei Ibun Roku\n\n" \
-             "White: Birthright and Revelations\n\n" \
-             "Black: Conquest and Revelations\n\n" \
-             "Green: Path of Radiance and Radiant Dawn\n\n" \
-             "Purple: Binding Blade and Blazing Sword\n\n" \
-             "Yellow: Genealogy of the Holy War and Thracia 776\n\n" \
-             "Colorless: Heroes and Warriors```"
+
+color_main_url = "https://serenesforest.net/wiki/index.php/Fire_Emblem_TCG"
+color_help_title = "There are currently 8 colors available for Cipher"
+color_help_games = ["Shadow Dragon and the Blade of Light, Shadow Dragon, Mystery of the Emblem, New Mystery of the Emblem, Echoes: Shadows of Valentia, Gaiden and Tokyo Mirage Sessions ♯FE\n\n","Awakening, #FE Genei Ibun Roku\n\n","Birthright and Revelations\n\n","Conquest and Revelations\n\n","Path of Radiance and Radiant Dawn\n\n","Binding Blade and Blazing Sword\n\n","Genealogy of the Holy War and Thracia 776\n\n","Heroes and Warriors\n\n"]
+color_help_colors = ["Red","Blue","White","Black","Green","Purple","Yellow","Colorless"]
 color_url = "https://serenesforest.net/wiki/index.php/Category:{color}Card"
 color_error = "Please write a correct color of cards"
+color_dict = {"Red": 0xc60000, "Blue": 0x0118aa, "White": 0xffffff, "Black": 0x000000, "Green": 0x1bad16, "Yellow": 0x7eb0e, "Purple": 0x6b01a8, "Colorless": 0x919191}
+
+
 
 booster_help = "```There are currently 9 booster series available for Cipher:\n\n" \
              "1: Warblade of Heroes - Shadow Dragon and the Blade of Light, Shadow Dragon, Mystery of the Emblem, New Mystery of the Emblem and Awakening\n\n" \
