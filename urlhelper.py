@@ -8,6 +8,9 @@ import re
 import help_messages
 
 
+"""
+Checks if the given url exists by reading the response code
+"""
 def url_exits(url):
     code = 0
     try:
@@ -22,6 +25,9 @@ def url_exits(url):
         return False
 
 
+"""
+Finds the card's png url
+"""
 def get_card_image_png(url, cardname):
     imgpostfix = None
     try:
@@ -35,6 +41,9 @@ def get_card_image_png(url, cardname):
     return help_messages.card_img_prefix + imgpostfix
 
 
+"""
+Finds the card's jpeg url
+"""
 def get_card_image_jpeg(url, cardname):
     imgpostfix = None
     try:
@@ -48,6 +57,10 @@ def get_card_image_jpeg(url, cardname):
     return help_messages.card_img_prefix + imgpostfix
 
 
+
+"""
+Finds the card's jpg url
+"""
 def get_card_image_jpg(url, cardname):
     imgpostfix = None
     try:

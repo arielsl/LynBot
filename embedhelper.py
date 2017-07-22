@@ -114,7 +114,7 @@ def embed_game_given(i):
 
 
 """
-Embeds the card image
+Embeds the card image when !card code is typed
 """
 def embed_card_image(imgurl, cardurl, cardname):
     em = discord.Embed(title=cardname,color=help_messages.color_dict["White"],
