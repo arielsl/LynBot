@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="059eeb05-1053-4b09-92ad-e287bac4a564" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bot.py" afterPath="$PROJECT_DIR$/bot.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/embedhelper.py" afterPath="$PROJECT_DIR$/embedhelper.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/help_messages.py" afterPath="$PROJECT_DIR$/help_messages.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/urlhelper.py" afterPath="$PROJECT_DIR$/urlhelper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/game.txt" afterPath="$PROJECT_DIR$/res/game.txt" />
     </list>
     <ignored path="LynBot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,47 +27,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bot.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.34595525">
+              <caret line="221" column="25" selection-start-line="221" selection-start-column="25" selection-end-line="221" selection-end-column="25" />
               <folding>
                 <element signature="e#509#523#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urlhelper.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/urlhelper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
-              <folding>
-                <element signature="e#54#97#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="help_messages.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/help_messages.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="embedhelper.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/embedhelper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.1803852">
-              <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-              <folding>
-                <element signature="e#89#103#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,10 +58,10 @@
         <option value="$PROJECT_DIR$/tokens.py" />
         <option value="$PROJECT_DIR$/urlchecker.py" />
         <option value="$PROJECT_DIR$/help.py" />
-        <option value="$PROJECT_DIR$/bot.py" />
-        <option value="$PROJECT_DIR$/help_messages.py" />
         <option value="$PROJECT_DIR$/urlhelper.py" />
+        <option value="$PROJECT_DIR$/bot.py" />
         <option value="$PROJECT_DIR$/embedhelper.py" />
+        <option value="$PROJECT_DIR$/help_messages.py" />
       </list>
     </option>
   </component>
@@ -335,13 +302,13 @@
     <configuration />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32840723" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.01642036" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21510673" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -404,12 +371,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bot.py">
+    <entry file="file://$PROJECT_DIR$/embedhelper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="20" selection-start-line="44" selection-start-column="20" selection-end-line="44" selection-end-column="20" />
+          <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
           <folding>
-            <element signature="e#509#523#0" expanded="true" />
+            <element signature="e#89#103#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -417,14 +384,14 @@
     <entry file="file://$PROJECT_DIR$/help_messages.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="3" column="27" selection-start-line="3" selection-start-column="27" selection-end-line="3" selection-end-column="27" />
+          <caret line="30" column="134" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="134" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/urlhelper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-0.06712565">
           <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding>
             <element signature="e#54#97#0" expanded="true" />
@@ -432,12 +399,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/embedhelper.py">
+    <entry file="file://$PROJECT_DIR$/bot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.1803852">
-          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.34595525">
+          <caret line="221" column="25" selection-start-line="221" selection-start-column="25" selection-end-line="221" selection-end-column="25" />
           <folding>
-            <element signature="e#89#103#0" expanded="true" />
+            <element signature="e#509#523#0" expanded="true" />
           </folding>
         </state>
       </provider>

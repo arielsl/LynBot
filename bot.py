@@ -38,6 +38,8 @@ async def on_ready():
     await bot.change_presence(game=discord.Game(name='Type !help'))
 
 """
+COMPLETED
+command: !help
 This command sends the user a help message with all the commands available for the bot
 """
 bot.remove_command('help')
@@ -47,6 +49,8 @@ async def help(ctx):
     return await bot.send_message(user, embed=embedhelper.embed_help_mssg())
 
 """
+COMPLETED
+command: !hello
 This command returns the greeting to the user and posts an image saved as a local resource
 Local resource images are not shared
 """
@@ -58,6 +62,7 @@ async def hello(ctx):
 
 
 """
+COMPLETED
 Command: !purge x
 This command deletes the x last messages sent to the channel, only between 2 to 100
 x must be an integer, with multiple arguments, it only reads the first one
@@ -85,6 +90,7 @@ async def purge(ctx, *i):
         return await bot.delete_messages(msgs)
 
 """
+COMPLETED
 command: !serenes term term2 term3
 This command returns a url of a Serene's Forest website search with the given terms
 command: !serenes
@@ -101,6 +107,7 @@ async def serenes(*args):
 
 
 """
+COMPLETED
 command: !cipher name
 This command returns a url to the Serenes Forest Cipher page with the given character name
 command: !cipher
@@ -138,6 +145,7 @@ async def card(*args):
             return await bot.say(imgurl)
 
 """
+COMPLETED
 command: !color colorName
 This command returns a url for the given color cards in Serenes Forest
 """
@@ -150,8 +158,8 @@ async def color(ctx, *args):
         color_given = args[0]
         url = help_messages.color_url.format(color=color_given.capitalize())
         if urlhelper.url_exits(url):
-            em = embedhelper.embed_color_given_mssg(url, color_given.capitalize())
-            return await bot.send_message(channel, embed=em)
+            return await bot.send_message(channel,
+                                          embed=embedhelper.embed_color_given_mssg(url, color_given.capitalize()))
         else:
             return await bot.say(help_messages.color_error)
 
@@ -196,6 +204,29 @@ async def deck(*args):
             return await bot.say(url)
         else:
             return await bot.say(help_messages.deck_error)
+
+
+"""
+command: !game x
+This command returns a message with the info of the given game number from 0-15
+If no arguments are given it returns a list with the games available
+"""
+@bot.command(pass_context=True)
+async def game(ctx, *args):
+    channel = ctx.message.channel
+    if len(args) == 0:
+        return await bot.send_message(channel, embed=embedhelper.embed_game_mssg())
+    else:
+        try:
+            i = int(args[0])
+        except Exception:
+            return await bot.say(help_messages.game_error)
+        if i >= 0 and i <=15:
+            return await bot.send_message(channel, embed=embedhelper.embed_game_given(i))
+        else:
+            return await bot.say(help_messages.game_error)
+
+
 
 """
 The bot runs using the token given by Discord to the application
