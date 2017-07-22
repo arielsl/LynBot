@@ -54,11 +54,10 @@ command: !hello
 This command returns the greeting to the user and posts an image saved as a local resource
 Local resource images are not shared
 """
-@bot.command(pass_context=True)
-async def hello(ctx):
-    channel = ctx.message.channel
+@bot.command()
+async def hello():
     await bot.say(help_messages.hi_there)
-    return await bot.send_file(channel, "imgs/hello/stranger.jpg")
+    return await bot.say("http://i.imgur.com/IAyP5bX.jpg")
 
 
 """
@@ -128,14 +127,12 @@ async def cipher(*args):
 
 
 """
-Might look for faster way
 COMPLETED
-command:!card name
+command:!card code
 This command searches for the card image in the Serenes Forest Cipher Page
 """
-@bot.command(pass_context=True)
-async def card(ctx, *args):
-    channel = ctx.message.channel
+@bot.command()
+async def card(*args):
     if len(args) == 0:
         return await bot.say(help_messages.card_example)
     else:
@@ -144,23 +141,12 @@ async def card(ctx, *args):
         for c in card:
             if c.isalpha():
                 c.upper()
-        url = help_messages.card_file_png.format(number=card)
-        url2 = help_messages.card_file_jpeg.format(number=card)
-        url3 = help_messages.card_file_jpg.format(number=card)
-        trueurl = ""
-        if urlhelper.url_exits(url):
-            imgurl = urlhelper.get_card_image_png(url, card)
-            trueurl = url
-        if urlhelper.url_exits(url2):
-            imgurl = urlhelper.get_card_image_jpeg(url2, card)
-            trueurl = url2
-        if urlhelper.url_exits(url3):
-            imgurl = urlhelper.get_card_image_jpg(url3, card)
-            trueurl = url3
+        url = help_messages.card_file.format(number=card)
+        imgurl = urlhelper.get_card_image(url, card)
         if imgurl is None:
             return await bot.say(help_messages.card_error)
         else:
-            return await bot.send_message(channel,embed=embedhelper.embed_card_image(imgurl, trueurl, card))
+            return await bot.say(imgurl)
 
 """
 COMPLETED
@@ -225,6 +211,7 @@ async def deck(*args):
 
 
 """
+COMPLETED
 command: !game x
 This command returns a message with the info of the given game number from 0-15
 If no arguments are given it returns a list with the games available

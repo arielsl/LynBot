@@ -112,13 +112,3 @@ def embed_game_given(i):
     em.set_image(url=tokens[6])
     return em
 
-
-"""
-Embeds the card image when !card code is typed
-"""
-def embed_card_image(imgurl, cardurl, cardname):
-    em = discord.Embed(title=cardname,color=help_messages.color_dict["White"],
-                          timestamp=datetime.datetime.now(),url=cardurl)
-    em.set_image(url=imgurl)
-    em.set_footer(text=help_messages.footer_text)
-    return em

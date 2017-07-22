@@ -77,9 +77,7 @@ Strings related to the card command
 """
 card_example = "Please enter the card name, B01/S01/S02 require card rarity\n" \
                "Example: B07-007 or S01-001ST"
-card_file_png = "https://serenesforest.net/wiki/index.php/File:{number}.png"
-card_file_jpeg = "https://serenesforest.net/wiki/index.php/File:{number}.jpeg"
-card_file_jpg = "https://serenesforest.net/wiki/index.php/File:{number}.jpg"
+card_file = "https://serenesforest.net/wiki/index.php/File:{number}."
 card_error = "Card doesn't seem to exist in Cipher"
 card_img_prefix = "https://serenesforest.net/"
 

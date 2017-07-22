@@ -26,50 +26,38 @@ def url_exits(url):
 
 
 """
-Finds the card's png url
+Finds the card's image url
 """
-def get_card_image_png(url, cardname):
+def get_card_image(url, cardname):
     imgpostfix = None
     try:
-        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        req = Request(url+"png", headers={'User-Agent': 'Mozilla/5.0'})
         source = urlopen(req).read().decode('UTF-8')
+        for link in re.findall("wiki/images/./../"+cardname+"\.png", source):
+            imgpostfix = link
+            break
+        return help_messages.card_img_prefix + imgpostfix
     except urllib.error.HTTPError as e:
-        return None
-    for link in re.findall("wiki/images/./../"+cardname+"\.png", source):
-        imgpostfix = link
-        break
-    return help_messages.card_img_prefix + imgpostfix
-
-
-"""
-Finds the card's jpeg url
-"""
-def get_card_image_jpeg(url, cardname):
-    imgpostfix = None
+        pass
     try:
-        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        req = Request(url+"jpg", headers={'User-Agent': 'Mozilla/5.0'})
         source = urlopen(req).read().decode('UTF-8')
+        for link in re.findall("wiki/images/./../"+cardname+"\.jpg", source):
+            imgpostfix = link
+            break
+        return help_messages.card_img_prefix + imgpostfix
     except urllib.error.HTTPError as e:
-        return None
-    for link in re.findall("wiki/images/./../"+cardname+"\.jpeg", source):
-        imgpostfix = link
-        break
-    return help_messages.card_img_prefix + imgpostfix
-
-
-
-"""
-Finds the card's jpg url
-"""
-def get_card_image_jpg(url, cardname):
-    imgpostfix = None
+        pass
     try:
-        req = Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        req = Request(url+"jpeg", headers={'User-Agent': 'Mozilla/5.0'})
         source = urlopen(req).read().decode('UTF-8')
+        for link in re.findall("wiki/images/./../"+cardname+"\.jpeg", source):
+            imgpostfix = link
+            break
+        return help_messages.card_img_prefix + imgpostfix
     except urllib.error.HTTPError as e:
-        return None
-    for link in re.findall("wiki/images/./../"+cardname+"\.jpg", source):
-        imgpostfix = link
-        break
-    return help_messages.card_img_prefix + imgpostfix
+        pass
+    return None
+
+
 
