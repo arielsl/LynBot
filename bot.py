@@ -128,21 +128,39 @@ async def cipher(*args):
 
 
 """
+Might look for faster way
+COMPLETED
 command:!card name
 This command searches for the card image in the Serenes Forest Cipher Page
 """
-@bot.command()
-async def card(*args):
+@bot.command(pass_context=True)
+async def card(ctx, *args):
+    channel = ctx.message.channel
     if len(args) == 0:
         return await bot.say(help_messages.card_example)
     else:
+        imgurl = None
         card = args[0]
-        url = help_messages.card_file.format(number=card.capitalize())
-        imgurl = urlhelper.get_card_image(url, card.capitalize())
+        for c in card:
+            if c.isalpha():
+                c.upper()
+        url = help_messages.card_file_png.format(number=card)
+        url2 = help_messages.card_file_jpeg.format(number=card)
+        url3 = help_messages.card_file_jpg.format(number=card)
+        trueurl = ""
+        if urlhelper.url_exits(url):
+            imgurl = urlhelper.get_card_image_png(url, card)
+            trueurl = url
+        if urlhelper.url_exits(url2):
+            imgurl = urlhelper.get_card_image_jpeg(url2, card)
+            trueurl = url2
+        if urlhelper.url_exits(url3):
+            imgurl = urlhelper.get_card_image_jpg(url3, card)
+            trueurl = url3
         if imgurl is None:
             return await bot.say(help_messages.card_error)
         else:
-            return await bot.say(imgurl)
+            return await bot.send_message(channel,embed=embedhelper.embed_card_image(imgurl, trueurl, card))
 
 """
 COMPLETED

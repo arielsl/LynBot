@@ -111,3 +111,14 @@ def embed_game_given(i):
     em.add_field(name="Description",value=tokens[5],inline=False)
     em.set_image(url=tokens[6])
     return em
+
+
+"""
+Embeds the card image
+"""
+def embed_card_image(imgurl, cardurl, cardname):
+    em = discord.Embed(title=cardname,color=help_messages.color_dict["White"],
+                          timestamp=datetime.datetime.now(),url=cardurl)
+    em.set_image(url=imgurl)
+    em.set_footer(text=help_messages.footer_text)
+    return em

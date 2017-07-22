@@ -24,10 +24,10 @@ Strings related to the help command
 """
 help_message = ["**!help:** sends this message to the user asking for help.\n\n"
                "**!hello:** a greeting message is displayed along with an image\n\n"
-               "**!purge x:** delete x amount of previous messages, if no amount is provided the bot deletes 100 messages",
-               "**!serenes s:** shares a link to SF with the given search query, if no query is provided it returns a link to the main SF page",
+               "**!purge [2-100]:** delete x amount of previous messages, if no amount is provided the bot deletes 100 messages",
+               "**!serenes search:** shares a link to SF with the given search query, if no query is provided it returns a link to the main SF page",
                "**!cipher name:** shares a link to the SF Cipher page for the given character, if no name is provided it returns a link to the main SF Cipher page\n\n"
-               "**!card number:** shares an image to the given Cipher card, if no number is provided it returns an example\n\n"
+               "**!card code:** shares an image to the given Cipher card, if no code is provided it returns an example\n\n"
                "**!color color:** writes info of the color given Cipher, if no color is provided it lists the current available colors\n\n"
                "**!booster [1-9]:** shares a link to the SF Cipher page for the given booster number, if no number is provided it lists the current avaible boosters\n\n"
                "**!deck [1-9]:** shares a link to the SF Cipher page for the given deck number, if no number is provided it lists the current available decks",
@@ -77,7 +77,9 @@ Strings related to the card command
 """
 card_example = "Please enter the card name, B01/S01/S02 require card rarity\n" \
                "Example: B07-007 or S01-001ST"
-card_file = "https://serenesforest.net/wiki/index.php/File:{number}.png"
+card_file_png = "https://serenesforest.net/wiki/index.php/File:{number}.png"
+card_file_jpeg = "https://serenesforest.net/wiki/index.php/File:{number}.jpeg"
+card_file_jpg = "https://serenesforest.net/wiki/index.php/File:{number}.jpg"
 card_error = "Card doesn't seem to exist in Cipher"
 card_img_prefix = "https://serenesforest.net/"
 

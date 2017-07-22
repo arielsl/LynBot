@@ -17,28 +17,28 @@ Sends a message to the user with the available commands.
 #### !hello
 A greeting message is displayed along with an image.
 
-#### !purge x
+#### !purge [2-100]
 Delete x amount of previous messages, if no amount is provided the bot deletes 100 messages.
 
-#### !serenes s
+#### !serenes search
 Shares a link to Serenes Forest with the given search query, if no query is provided it returns a link to the main SF page.
 
 #### !cipher name
 Shares link to the Serenes Forest Cipher page for the given character, if no name is provided it returns a link to the main Serenes Forest Cipher page.
 
-#### !card number
-Shares an image to the given Cipher card, if no number is provided it returns an example.
+#### !card code
+Shares an image to the given Cipher card, if no code is provided it returns an example.
 
-#### !color color
+#### !color colorname
 Writes info of the color given Cipher, if no color is provided it lists the current available colors.
 
-#### !booster x
+#### !booster [1-9]
 Shares a link to the Serenese Forest Cipher page for the given booster number, if no number is provided it lists the current avaible boosters.
 
-#### !deck x
+#### !deck [1-9]
 Shares a link to the Serenes Forest Cipher page for the given deck number, if no number is provided it lists the current available decks.
 
-#### !game x
+#### !game [0-15]
 Writes the info of the given game number, if no number is provided it lists the released games.
 
 ---
