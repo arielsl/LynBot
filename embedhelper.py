@@ -4,6 +4,7 @@ This class will hold some useful methods to format the messages send by the bot.
 import discord
 import help_messages
 import datetime
+import urlhelper
 
 
 """
@@ -71,16 +72,14 @@ def embed_color_given_mssg(color_url, color_name):
 Embeds a message when !game is typed
 """
 def embed_game_mssg():
-    f = open(help_messages.game_file, 'r')
-    lines = []
-    games = []
-    for line in f:
-        lines.append(line)
-    for line in lines:
-        tokens = [x.strip() for x in line.split('|')]
-        title = tokens[0] + ". " + tokens[1]
-        games.append(title)
-    content = "\n".join(games)
+    content = ""
+    counter = 1
+    for game in help_messages.game_names:
+        content += str(counter)
+        content +=". "
+        content += game
+        content += "\n"
+        counter += 1
     em =discord.Embed(title="Fire Emblem Games", color=help_messages.color_dict["Green"],
                       description="All officially released Fire Emblem Games. Type !game gamenumber for info",
                       timestamp=datetime.datetime.now())
@@ -94,21 +93,70 @@ def embed_game_mssg():
 Embeds a message when !game x is typed
 """
 def embed_game_given(i):
-    f = open(help_messages.game_file, 'r')
-    lines = []
-    tokens = []
-    for line in f:
-        lines.append(line)
-    for line in lines:
-        tokens = [x.strip() for x in line.split('|')]
-        if int(tokens[0]) == i:
-            break
-    em = discord.Embed(title=tokens[1],color=help_messages.color_dict["Green"],
-                       description=tokens[4],timestamp=datetime.datetime.now(),url=tokens[7])
+    info = urlhelper.game_info(help_messages.game_urls[i-1])
+    em = discord.Embed(title=info[0],color=help_messages.color_dict["Green"],
+                       description=info[2],timestamp=datetime.datetime.now(),url=help_messages.game_urls[i-1])
     em.set_author(name=help_messages.all_info_from_serenes, url=help_messages.serenes_home)
     em.set_footer(text=help_messages.footer_text)
-    em.add_field(name="Release",value=tokens[3]+" | "+tokens[2],inline=False)
-    em.add_field(name="Description",value=tokens[5],inline=False)
-    em.set_image(url=tokens[6])
+    em.add_field(name="Release",value=info[3]+" | "+info[4],inline=False)
+    em.add_field(name="Description",value=info[1],inline=False)
+    em.set_image(url=info[5])
     return em
+
+
+"""
+Embeds a message when !booster is typed
+"""
+def embed_booster():
+    content = ""
+    counter = 1
+    for game in help_messages.booster_names:
+        content += str(counter)
+        content +=". "
+        content += game
+        content += "\n"
+        counter += 1
+    em =discord.Embed(title="Fire Emblem Cipher Boosters", color=help_messages.color_dict["Purple"],
+                      description="All officially released Fire Emblem Cipher Boosters. Type !booster x for info",
+                      timestamp=datetime.datetime.now())
+    em.set_author(name=help_messages.all_info_from_wikia, url=help_messages.wikia_home)
+    em.set_footer(text=help_messages.footer_text)
+    em.add_field(name="Booster Series",value=content)
+    return em
+
+
+"""
+Embeds a message when !booster x is typed
+"""
+def embed_booster_given(i):
+    info = urlhelper.booster_info(help_messages.booster_urls[i])
+    em = discord.Embed(title=info[0],color=help_messages.color_dict["Purple"],
+                       timestamp=datetime.datetime.now(),url=help_messages.booster_urls[i])
+    em.set_author(name=help_messages.all_info_from_wikia, url=help_messages.wikia_home)
+    em.set_footer(text=help_messages.footer_text)
+    em.add_field(name="Info",value=info[1]+"\n"+info[2],inline=False)
+    em.add_field(name="Contents",value=info[3],inline=False)
+    em.set_image(url=info[4])
+    return em
+
+"""
+Embeds a message when !booster x is typed with 3 or 2 or 3
+"""
+def embed_booster_given_alt(i):
+    desc = ""
+    if i == 1:
+        desc = help_messages.booster_2_info
+    else:
+        desc = help_messages.booster_3_info
+    info = urlhelper.booster_info(help_messages.booster_urls[i])
+    em = discord.Embed(title=info[0],color=help_messages.color_dict["Purple"],
+                       timestamp=datetime.datetime.now(),url=help_messages.booster_urls[i])
+    em.set_author(name=help_messages.all_info_from_wikia, url=help_messages.wikia_home)
+    em.set_footer(text=help_messages.footer_text)
+    em.add_field(name="Info",value=desc+"\n\n"+info[1],inline=False)
+    em.add_field(name="Contents",value=info[3],inline=False)
+    em.set_image(url=info[4])
+    return em
+
+
 

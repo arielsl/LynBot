@@ -39,6 +39,8 @@ Strings related to the embeds
 """
 all_info_from_serenes = "All information from Serenes Forest"
 footer_text = "For any requests or error reporting please contact me."
+all_info_from_wikia = "All information from the wikia"
+wikia_home = "http://fireemblem.wikia.com/wiki/Fire_Emblem_Wikia"
 
 
 """
@@ -99,44 +101,93 @@ color_dict = {"Red": 0xc60000, "Blue": 0x0118aa, "White": 0xffffff, "Black": 0x0
 """
 Strings related to the booster command
 """
-booster_help = "```There are currently 9 booster series available for Cipher:\n\n" \
-             "1: Warblade of Heroes - Shadow Dragon and the Blade of Light, Shadow Dragon, Mystery of the Emblem, New Mystery of the Emblem and Awakening\n\n" \
-             "2: Soulful Flames of Light and Dark - Birthright, Conquest and Revelations\n\n" \
-             "3: Twin Swords of Hope - Path of Radiance, Birthright, Conquest, Revelations, Awakening\n\n" \
-             "4: Shimmering Illusongs - Shadow Dragon and the Blade of Light, Shadow Dragon, Mystery of the Emblem, New Mystery of the Emblem, Awakening and Tokyo Mirage Sessions ♯FE\n\n" \
-             "5: Overcoming Rivalry - Binding Blade and Radiant Dawn\n\n" \
-             "6: Storm of the Knights' Shadows - Genealogy of the Holy War, Conquest and Revelations\n\n" \
-             "7: Rise To Honor - Blazing Sword, Birthright and Revelations\n\n" \
-             "8: Life and Death: Beyond Fate - Genealogy of the Holy War and Awakening\n\n" \
-             "9:Thunderous Earth - Gaiden, Echoes: Shadows of Valentia, Binding Blade and Path of Radiance```"
-booster_url = "https://serenesforest.net/wiki/index.php/Booster_Set_{booster_number}:_{booster_name}"
+booster_help = "There are currently 9 booster series available for Cipher"
 booster_error = "Please write a correct number for booster series"
-booster_names = ["Warblade_of_Heroes","Soulful_Flames_of_Light_and_Dark","Twin_Swords_of_Hope",
-                 "Shimmering_Illusongs","Overcoming_Rivalry","Storm_of_the_Knights'_Shadows",
-                 "Rise_To_Honor","Life_and_Death:_Beyond_Fate","Thunderous_Earth"]
+booster_names = ["Warblade of Heroes",
+             "Soulful Flames of Light and Dark",
+             "Dual Swords of Hope",
+             "Glittering Concert of Illusions",
+             "Beyond Strife",
+             "Storm of the Knights' Shadows",
+             "Rise To Honour",
+             "Life and Death: Crossroads Fate",
+             "Roaring Echoes"]
+booster_urls = ["http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Warblade_of_Heroes",
+                "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Soulful_Flames_of_Light_and_Dark",
+                "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Dual_Swords_of_Hope",
+                "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Glittering_Concert_of_Illusions",
+                "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Beyond_Strife",
+                "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Storm_of_the_Knights%27_Shadows",
+                "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Rise_to_Honour",
+                "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Life_and_Death,_Crossroads_of_Fate",
+                "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Roaring_Echoes"]
+booster_2_info = "Fire Emblem 0 (Cipher): Soulful Flames of Light and Dark (光と闇の神焔 Hikari to Yami no Shinen lit. Divine Flame of Light and Darkness) is the second booster series released for the trading card game Fire Emblem 0 (Cipher). It was released by Nintendo in Japan on September 18, 2015 alongside Fire Emblem 0 (Cipher): Birthright and Fire Emblem 0 (Cipher): Conquest."
+booster_3_info = "Fire Emblem 0 (Cipher): Dual Swords of Hope (希望への雙剣 Kibō he no Sōken lit. Twin Swords Towards Hope) is the third booster series released for the trading card game, Fire Emblem 0 (Cipher). It was released by Nintendo on December 10, 2015 in Japan."
+
+
 
 
 """
 Strings related to the deck command
 """
-deck_help = "```There are currently 9 starter decks available for Cipher:\n\n" \
-             "1: War of Darkness - Shadow Dragon and the Blade of Light, Shadow Dragon, Mystery of the Emblem and New Mystery of the Emblem\n\n" \
-             "2: Awakening\n\n" \
-             "3: White Night - Birthright\n\n" \
-             "4: Black Night - Conquest\n\n" \
-             "5: Path of Radiance\n\n" \
-             "6: Illusory Revelations - Tokyo Mirage Sessions ♯FE\n\n" \
-             "7: Binding Blade\n\n" \
-             "8: Genealogy of the Holy War\n\n" \
-             "9: Land of the Gods - Gaiden and Echoes: Shadows of Valentia```"
-deck_url = "https://serenesforest.net/wiki/index.php/Starter_Deck_{deck_number}:_{deck_name}"
+deck_help = "There are currently 9 starter decks available for Cipher"
+deck_names = ["War of Darkness",
+             "Awakening",
+             "White Night",
+             "Black Night",
+             "Path of Radiance",
+             "Illusory Revelations",
+             "Binding Blade",
+             "Genealogy of the Holy War",
+             "Land of the Gods"]
 deck_error = "Please write a correct number for a deck"
-deck_names = ["War_of_Darkness","Awakening","White_Night","Black_Night","Path_of_Radiance",
-              "Illusory_Revelations","Binding_Blade","Genealogy_of_the_Holy_War","Land_of_the_Gods"]
+deck_urls = ["War_of_Darkness",
+             "Awakening",
+             "White_Night",
+             "Black_Night",
+             "Path_of_Radiance",
+             "Illusory_Revelations",
+             "Binding_Blade",
+             "Genealogy_of_the_Holy_War",
+             "Land_of_the_Gods"]
 
 
 """
 Strings related to the game command
 """
-game_help_title = "There are 15 mainline games and a mobile game"
-game_error = "Please write a number between 0-15 for the game wanted"
+game_help_title = "There are 15 mainline games, a mobile game and an upcoming Warriors game"
+game_error = "Please write a number between 1-17 for the game wanted"
+game_names = ["Dark Dragon and Sword of Light",
+              "Gaiden",
+              "Mystery of the Emblem",
+              "Genealogy of the Holy War",
+              "Thracia 776",
+              "Binding Blade",
+              "Blazing Sword",
+              "The Sacred Stones",
+              "Path of Radiance",
+              "Radiant Dawn",
+              "Shadow Dragon",
+              "Heroes of Light and Shadow",
+              "Awakening",
+              "Fire Emblem Fates",
+              "Fire Emblem Echoes",
+              "Fire Emblem Heroes",
+              "Fire Emblem Warriors"]
+game_urls = ["https://serenesforest.net/dark-dragon-and-sword-of-light/",
+             "https://serenesforest.net/gaiden/",
+             "https://serenesforest.net/mystery-of-the-emblem/",
+             "https://serenesforest.net/genealogy-of-the-holy-war/",
+             "https://serenesforest.net/thracia-776/",
+             "https://serenesforest.net/binding-blade/",
+             "https://serenesforest.net/blazing-sword/",
+             "https://serenesforest.net/the-sacred-stones/",
+             "https://serenesforest.net/path-of-radiance/",
+             "https://serenesforest.net/radiant-dawn/",
+             "https://serenesforest.net/shadow-dragon/",
+             "https://serenesforest.net/light-and-shadow/",
+             "https://serenesforest.net/awakening/",
+             "https://serenesforest.net/fire-emblem-fates/",
+             "https://serenesforest.net/fire-emblem-echoes-shadows-valentia/",
+             "https://serenesforest.net/fire-emblem-heroes/",
+             "https://serenesforest.net/fire-emblem-warriors/"]

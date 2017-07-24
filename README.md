@@ -41,6 +41,12 @@ Shares a link to the Serenes Forest Cipher page for the given deck number, if no
 #### !game [0-15]
 Writes the info of the given game number, if no number is provided it lists the released games.
 
+#### !thinking
+Really makes Delthea think
+
+#### !tubbs
+Shares an image of the fattest neko in Neko Atsume
+
 ---
 
 ## Bot Invitation

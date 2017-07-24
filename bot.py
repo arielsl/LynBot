@@ -22,7 +22,6 @@ The selected prefix for the is the standard !
 The client keeps track of the client info
 """
 bot = Bot(command_prefix="!")
-client = discord.Client()
 
 
 """
@@ -149,7 +148,6 @@ async def card(*args):
             return await bot.say(imgurl)
 
 """
-COMPLETED
 command: !color colorName
 This command returns a url for the given color cards in Serenes Forest
 """
@@ -169,24 +167,26 @@ async def color(ctx, *args):
 
 
 """
+COMPLETED
 command: !booster x
 This command returns a url for the given booster series in Serenes Forest
 """
-@bot.command()
-async def booster(*args):
+@bot.command(pass_context=True)
+async def booster(ctx, *args):
+    channel = ctx.message.channel
     if len(args) == 0:
-        return await bot.say(help_messages.booster_help)
+        return await bot.send_message(channel, embed=embedhelper.embed_booster())
     else:
         try:
             booster_given = int(args[0])
         except Exception:
             return await bot.say(help_messages.booster_error)
-        url = help_messages.booster_url.format(booster_number=booster_given,
-                                               booster_name=help_messages.booster_names[booster_given - 1])
-        if urlhelper.url_exits(url):
-            return await bot.say(url)
-        else:
+        if booster_given == 2 or booster_given == 3:
+            return await bot.send_message(channel, embed=embedhelper.embed_booster_given_alt(booster_given - 1))
+        elif booster_given < 1 or booster_given > 9:
             return await bot.say(help_messages.booster_error)
+        else:
+            return await bot.send_message(channel, embed=embedhelper.embed_booster_given(booster_given - 1))
 
 
 """
@@ -226,11 +226,36 @@ async def game(ctx, *args):
             i = int(args[0])
         except Exception:
             return await bot.say(help_messages.game_error)
-        if i >= 0 and i <=15:
+        if i >= 0 and i <=17:
             return await bot.send_message(channel, embed=embedhelper.embed_game_given(i))
         else:
             return await bot.say(help_messages.game_error)
 
+			
+"""
+COMPLETED
+command: !thinking
+This command returns an image of Delthea thinking
+"""		
+@bot.command()
+async def thinking(*args):
+	if len(args) == 0:
+		return await bot.say("http://i.imgur.com/pyL35nz.png")
+	else:
+		return await bot.say("Too much to think about")
+
+
+"""
+COMPLETED
+command: !thinking
+This command returns an image of Tubbs
+"""				
+@bot.command()
+async def tubbs(*args):
+	if len(args) == 0:
+		return await bot.say("http://i.imgur.com/nMOQwnb.png?1")
+	else:
+		return await bot.say("Tubbs can't eat that much")
 
 
 """
@@ -238,3 +263,4 @@ The bot runs using the token given by Discord to the application
 It is not included for security purposes
 """
 bot.run(tokens.BOT_TOKEN)
+bot.close()
