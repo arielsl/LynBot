@@ -31,7 +31,10 @@ help_message = ["**!help:** sends this message to the user asking for help.\n\n"
                "**!color color:** writes info of the color given Cipher, if no color is provided it lists the current available colors\n\n"
                "**!booster [1-9]:** shares a link to the SF Cipher page for the given booster number, if no number is provided it lists the current avaible boosters\n\n"
                "**!deck [1-9]:** shares a link to the SF Cipher page for the given deck number, if no number is provided it lists the current available decks",
-                "**!game [0-15]:** writes the info of the given game number, if no number is provided it lists the released games"]
+                "**!game [0-15]:** writes the info of the given game number, if no number is provided it lists the released games",
+                "**!thinking:** displays an image of Delthea thinking\n\n"
+                "**!tubbs:** displays an image of the fattest neko in Neko Atsume\n\n"
+                "**!say message:** displays a message L I K E  T H I S"]
 
 
 """
@@ -94,7 +97,7 @@ color_help_games = ["Shadow Dragon and the Blade of Light, Shadow Dragon, Myster
 color_help_colors = ["Red","Blue","White","Black","Green","Purple","Yellow","Colorless"]
 color_url = "https://serenesforest.net/wiki/index.php/Category:{color}Card"
 color_error = "Please write a correct color of cards"
-color_dict = {"Red": 0xc60000, "Blue": 0x0118aa, "White": 0xffffff, "Black": 0x000000, "Green": 0x1bad16, "Yellow": 0x7eb0e, "Purple": 0x6b01a8, "Colorless": 0x919191}
+color_dict = {"Red": 0xc60000, "Blue": 0x0118aa, "White": 0xffffff, "Black": 0x000000, "Green": 0x1bad16, "Yellow": 0xffef11, "Purple": 0x6b01a8, "Colorless": 0x919191}
 
 
 
@@ -131,25 +134,25 @@ booster_3_info = "Fire Emblem 0 (Cipher): Dual Swords of Hope (希望への雙�
 Strings related to the deck command
 """
 deck_help = "There are currently 9 starter decks available for Cipher"
+deck_error = "Please write a correct number for a deck"
 deck_names = ["War of Darkness",
              "Awakening",
-             "White Night",
-             "Black Night",
+             "Birthright",
+             "Conquest",
              "Path of Radiance",
-             "Illusory Revelations",
-             "Binding Blade",
+             "Tokyo Mirage Sessions ♯FE",
+             "Binding Rebellion",
              "Genealogy of the Holy War",
-             "Land of the Gods"]
-deck_error = "Please write a correct number for a deck"
-deck_urls = ["War_of_Darkness",
-             "Awakening",
-             "White_Night",
-             "Black_Night",
-             "Path_of_Radiance",
-             "Illusory_Revelations",
-             "Binding_Blade",
-             "Genealogy_of_the_Holy_War",
-             "Land_of_the_Gods"]
+             "Divided Land of the Gods"]
+deck_urls = ["http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_War_of_Darkness",
+             "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Awakening",
+             "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Birthright",
+             "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Conquest",
+             "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Path_of_Radiance",
+             "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Tokyo_Mirage_Sessions_%E2%99%AFFE",
+             "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Binding_Rebellion",
+             "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Genealogy_of_the_Holy_War",
+             "http://fireemblem.wikia.com/wiki/Fire_Emblem_0_(Cipher):_Divided_Land_of_Gods"]
 
 
 """

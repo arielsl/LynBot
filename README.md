@@ -24,7 +24,7 @@ Delete x amount of previous messages, if no amount is provided the bot deletes 1
 Shares a link to Serenes Forest with the given search query, if no query is provided it returns a link to the main SF page.
 
 #### !cipher name
-Shares link to the Serenes Forest Cipher page for the given character, if no name is provided it returns a link to the main Serenes Forest Cipher page.
+Shares a link to the Serenes Forest Cipher page for the given character, if no name is provided it returns a link to the main Serenes Forest Cipher page.
 
 #### !card code
 Shares an image to the given Cipher card, if no code is provided it returns an example.
@@ -33,10 +33,10 @@ Shares an image to the given Cipher card, if no code is provided it returns an e
 Writes info of the color given Cipher, if no color is provided it lists the current available colors.
 
 #### !booster [1-9]
-Shares a link to the Serenese Forest Cipher page for the given booster number, if no number is provided it lists the current avaible boosters.
+Writes the info of the given booster number, if no number is provided it lists the released boosters.
 
 #### !deck [1-9]
-Shares a link to the Serenes Forest Cipher page for the given deck number, if no number is provided it lists the current available decks.
+Writes the info of the given deck number, if no number is provided it lists the released decks.
 
 #### !game [0-15]
 Writes the info of the given game number, if no number is provided it lists the released games.
@@ -46,6 +46,9 @@ Really makes Delthea think
 
 #### !tubbs
 Shares an image of the fattest neko in Neko Atsume
+
+#### !say message
+Write the message L I K E  T H I S
 
 ---
 

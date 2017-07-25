@@ -190,22 +190,22 @@ async def booster(ctx, *args):
 
 
 """
+COMPLETED
 command: !deck x
 This command returns a url for the given starter deck in Serenes Forest
 """
-@bot.command()
-async def deck(*args):
+@bot.command(pass_context=True)
+async def deck(ctx, *args):
+    channel = ctx.message.channel
     if len(args) == 0:
-        return await bot.say(help_messages.deck_help)
+        return await bot.send_message(channel, embed=embedhelper.embed_deck())
     else:
         try:
             deck_given = int(args[0])
         except Exception:
             return await bot.say(help_messages.deck_error)
-        url = help_messages.deck_url.format(deck_number=deck_given,
-                                               deck_name=help_messages.deck_names[deck_given - 1])
-        if urlhelper.url_exits(url):
-            return await bot.say(url)
+        if deck_given >= 0 or deck_given <= 9:
+            return await bot.send_message(channel, embed=embedhelper.embed_deck_given(deck_given - 1))
         else:
             return await bot.say(help_messages.deck_error)
 
@@ -247,7 +247,7 @@ async def thinking(*args):
 
 """
 COMPLETED
-command: !thinking
+command: !tubbs
 This command returns an image of Tubbs
 """				
 @bot.command()
@@ -256,6 +256,23 @@ async def tubbs(*args):
 		return await bot.say("http://i.imgur.com/nMOQwnb.png?1")
 	else:
 		return await bot.say("Tubbs can't eat that much")
+		
+
+"""
+COMPLETED
+command: !say message
+M A K E S  M E S S A G E S  A P P E A R  L I K E  T H I S
+"""
+@bot.command()
+async def say(*args):
+	if len(args) == 0:
+		return await bot.say("Nothing to say")
+	else:
+		say_list = []
+		for word in args:
+			say_list.append(" ".join(list(word.upper())))
+		say_message = "  ".join(say_list)
+		return await bot.say(say_message)
 
 
 """

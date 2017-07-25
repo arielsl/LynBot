@@ -74,12 +74,12 @@ def game_info(game_url):
 
     for h in soup.find_all("h2",{"class" : "page-title"}):
         info.append(h.string)
-    info.append(soup.p.text)
+    info.append(soup.p.get_text(" ", strip=True))
     want = True
     counter = 0
     for heading in soup.find_all("td"):
         if want and counter < 3:
-            info.append(heading.text)
+            info.append(heading.get_text(" ", strip=True))
             want = False
             counter += 1
         else:
@@ -99,12 +99,33 @@ def booster_info(booster_url):
     except urllib.error.HTTPError as e:
         pass
     soup = BeautifulSoup(webpage, "html.parser")
-    info.append(soup.find_all("h1",{"class":"page-header__title"})[0].text)
-    info.append(soup.find_all("p")[0].text)
-    info.append(soup.find_all("p")[1].text)
-    info.append(soup.find_all('div', id='mw-content-text')[0].ul.text)
+    info.append(soup.find_all("h1",{"class":"page-header__title"})[0].get_text(" ", strip=True))
+    info.append(soup.find_all("p")[0].get_text(" ", strip=True))
+    info.append(soup.find_all("p")[1].get_text(" ", strip=True))
+    info.append(soup.find_all('div', id='mw-content-text')[0].ul.get_text(" ", strip=True))
     link = soup.find_all("a",{"class":"image-thumbnail"})[0]
     info.append(link.get("href"))
+    info.append(soup.find_all("div",{"class":"pi-data-value"})[4].get_text(" ", strip=True))
+    return info
+	
+"""
+Find the deck info
+"""
+def deck_info(deck_url):
+    info = []
+    try:
+        req = Request(deck_url, headers={'User-Agent': 'Mozilla/5.0'})
+        webpage = urlopen(req).read()
+    except urllib.error.HTTPError as e:
+        pass
+    soup = BeautifulSoup(webpage, "html.parser")
+    info.append(soup.find_all("h1",{"class":"page-header__title"})[0].get_text(" ", strip=True))
+    info.append(soup.find_all("p")[0].get_text(" ", strip=True))
+    info.append(soup.find_all("p")[1].get_text(" ", strip=True))
+    info.append(soup.find_all('div', id='mw-content-text')[0].ul.get_text(" ", strip=True))
+    link = soup.find_all("a",{"class":"image-thumbnail"})[0]
+    info.append(link.get("href"))
+    info.append(soup.find_all("div",{"class":"pi-data-value"})[4].get_text(" ", strip=True))
     return info
 
 

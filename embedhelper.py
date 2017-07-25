@@ -19,6 +19,7 @@ def embed_help_mssg():
     em.add_field(name="Serenes Forest Commands",value=help_messages.help_message[1])
     em.add_field(name="Cipher Commands",value=help_messages.help_message[2])
     em.add_field(name="Games Commands",value=help_messages.help_message[3])
+    em.add_field(name="Misc commands",value=help_messages.help_message[4])
     em.set_thumbnail(url="http://i.imgur.com/tkrhgmV.jpg")
     return em
 
@@ -134,7 +135,8 @@ def embed_booster_given(i):
                        timestamp=datetime.datetime.now(),url=help_messages.booster_urls[i])
     em.set_author(name=help_messages.all_info_from_wikia, url=help_messages.wikia_home)
     em.set_footer(text=help_messages.footer_text)
-    em.add_field(name="Info",value=info[1]+"\n"+info[2],inline=False)
+    em.add_field(name="Release Date", value=info[5],inline=False)
+    em.add_field(name="Info",value=info[2],inline=False)
     em.add_field(name="Contents",value=info[3],inline=False)
     em.set_image(url=info[4])
     return em
@@ -153,7 +155,45 @@ def embed_booster_given_alt(i):
                        timestamp=datetime.datetime.now(),url=help_messages.booster_urls[i])
     em.set_author(name=help_messages.all_info_from_wikia, url=help_messages.wikia_home)
     em.set_footer(text=help_messages.footer_text)
-    em.add_field(name="Info",value=desc+"\n\n"+info[1],inline=False)
+    em.add_field(name="Release Date", value=info[5],inline=False)
+    em.add_field(name="Info",value=info[1],inline=False)
+    em.add_field(name="Contents",value=info[3],inline=False)
+    em.set_image(url=info[4])
+    return em
+	
+
+"""
+Embeds a message when !booster is typed
+"""
+def embed_deck():
+    content = ""
+    counter = 1
+    for deck in help_messages.deck_names:
+        content += str(counter)
+        content +=". "
+        content += deck
+        content += "\n"
+        counter += 1
+    em =discord.Embed(title="Fire Emblem Cipher Decks", color=help_messages.color_dict["Black"],
+                      description="All officially released Fire Emblem Cipher Decks. Type !deck x for info",
+                      timestamp=datetime.datetime.now())
+    em.set_author(name=help_messages.all_info_from_wikia, url=help_messages.wikia_home)
+    em.set_footer(text=help_messages.footer_text)
+    em.add_field(name="Decks",value=content)
+    return em	
+	
+	
+"""
+Embeds a message when the !deck x is typed
+"""
+def embed_deck_given(i):
+    info = urlhelper.deck_info(help_messages.deck_urls[i])
+    em = discord.Embed(title=info[0],color=help_messages.color_dict["Black"],
+                       timestamp=datetime.datetime.now(),url=help_messages.deck_urls[i])
+    em.set_author(name=help_messages.all_info_from_wikia, url=help_messages.wikia_home)
+    em.set_footer(text=help_messages.footer_text)
+    em.add_field(name="Release Date", value=info[5],inline=False)
+    em.add_field(name="Info",value=info[2],inline=False)
     em.add_field(name="Contents",value=info[3],inline=False)
     em.set_image(url=info[4])
     return em
