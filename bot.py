@@ -287,6 +287,19 @@ async def nino(*args):
         return await bot.say("Nino can't do her best with too many arguments")
 
 
+"""
+COMPLETED
+command: !invite
+The bot's invitation link
+"""
+@bot.command()
+async def invite(*args):
+    if len(args) == 0:
+        return await bot.say("https://discordapp.com/oauth2/authorize?client_id=337535718274629645&scope=bot")
+    else:
+        return await bot.say("Too many arguments")
+
+
 
 """
 The bot runs using the token given by Discord to the application

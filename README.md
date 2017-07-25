@@ -9,7 +9,7 @@ The bot was created using the [discord.py](https://github.com/Rapptz/discord.py 
 ---
 
 ## Commands
-The following commands are available at the moment. Most links and info are taken from [Serenes Forest](http://serenesforest.net/ "Serenes Forest"):
+The following commands are available at the moment. Most links and info are taken from [Serenes Forest](http://serenesforest.net/ "Serenes Forest") and the [Wikia](http://fireemblem.wikia.com/wiki/Fire_Emblem_Wikia "Wikia"):
 
 #### !help
 Sends a message to the user with the available commands.
@@ -19,6 +19,9 @@ A greeting message is displayed along with an image.
 
 #### !purge [2-100]
 Delete x amount of previous messages, if no amount is provided the bot deletes 100 messages.
+
+#### !invite
+Shares the invitation link for the bot
 
 #### !serenes search
 Shares a link to Serenes Forest with the given search query, if no query is provided it returns a link to the main SF page.
@@ -49,6 +52,9 @@ Shares an image of the fattest neko in Neko Atsume
 
 #### !say message
 Write the message L I K E  T H I S
+
+#### !nino
+Totally Nino your friends
 
 ---
 

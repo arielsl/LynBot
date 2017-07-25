@@ -24,7 +24,8 @@ Strings related to the help command
 """
 help_message = ["**!help:** sends this message to the user asking for help.\n\n"
                "**!hello:** a greeting message is displayed along with an image\n\n"
-               "**!purge [2-100]:** delete x amount of previous messages, if no amount is provided the bot deletes 100 messages",
+               "**!purge [2-100]:** delete x amount of previous messages, if no amount is provided the bot deletes 100 messages\n\n"
+                "**!invite:** shares the invitation link for the bot",
                "**!serenes search:** shares a link to SF with the given search query, if no query is provided it returns a link to the main SF page",
                "**!cipher name:** shares a link to the SF Cipher page for the given character, if no name is provided it returns a link to the main SF Cipher page\n\n"
                "**!card code:** shares an image to the given Cipher card, if no code is provided it returns an example\n\n"
@@ -35,7 +36,7 @@ help_message = ["**!help:** sends this message to the user asking for help.\n\n"
                 "**!thinking:** really makes Delthea think\n\n"
                 "**!tubbs:** displays an image of the fattest neko in Neko Atsume\n\n"
                 "**!say message:** displays a message L I K E  T H I S\n\n"
-                "**!nino:** totally Nino'd your friends"]
+                "**!nino:** totally Nino your friends"]
 
 
 """
