@@ -32,9 +32,10 @@ help_message = ["**!help:** sends this message to the user asking for help.\n\n"
                "**!booster [1-9]:** shares a link to the SF Cipher page for the given booster number, if no number is provided it lists the current avaible boosters\n\n"
                "**!deck [1-9]:** shares a link to the SF Cipher page for the given deck number, if no number is provided it lists the current available decks",
                 "**!game [0-15]:** writes the info of the given game number, if no number is provided it lists the released games",
-                "**!thinking:** displays an image of Delthea thinking\n\n"
+                "**!thinking:** really makes Delthea think\n\n"
                 "**!tubbs:** displays an image of the fattest neko in Neko Atsume\n\n"
-                "**!say message:** displays a message L I K E  T H I S"]
+                "**!say message:** displays a message L I K E  T H I S\n\n"
+                "**!nino:** totally Nino'd your friends"]
 
 
 """

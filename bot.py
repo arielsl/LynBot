@@ -231,7 +231,7 @@ async def game(ctx, *args):
         else:
             return await bot.say(help_messages.game_error)
 
-			
+
 """
 COMPLETED
 command: !thinking
@@ -239,10 +239,10 @@ This command returns an image of Delthea thinking
 """		
 @bot.command()
 async def thinking(*args):
-	if len(args) == 0:
-		return await bot.say("http://i.imgur.com/pyL35nz.png")
-	else:
-		return await bot.say("Too much to think about")
+    if len(args) == 0:
+        return await bot.say("http://i.imgur.com/pyL35nz.png")
+    else:
+        return await bot.say("Too much to think about")
 
 
 """
@@ -252,11 +252,11 @@ This command returns an image of Tubbs
 """				
 @bot.command()
 async def tubbs(*args):
-	if len(args) == 0:
-		return await bot.say("http://i.imgur.com/nMOQwnb.png?1")
-	else:
-		return await bot.say("Tubbs can't eat that much")
-		
+    if len(args) == 0:
+        return await bot.say("http://i.imgur.com/nMOQwnb.png?1")
+    else:
+        return await bot.say("Tubbs can't eat that much")
+
 
 """
 COMPLETED
@@ -265,14 +265,27 @@ M A K E S  M E S S A G E S  A P P E A R  L I K E  T H I S
 """
 @bot.command()
 async def say(*args):
-	if len(args) == 0:
-		return await bot.say("Nothing to say")
-	else:
-		say_list = []
-		for word in args:
-			say_list.append(" ".join(list(word.upper())))
-		say_message = "  ".join(say_list)
-		return await bot.say(say_message)
+    if len(args) == 0:
+        return await bot.say("Nothing to say")
+    else:
+        say_list = []
+        for word in args:
+            say_list.append(" ".join(list(word.upper())))
+        say_message = "  ".join(say_list)
+        return await bot.say(say_message)
+
+"""
+COMPLETED
+command: !nino
+Nino'd your friends
+"""
+@bot.command()
+async def nino(*args):
+    if len(args) == 0:
+        return await bot.say("http://i.imgur.com/Vvysuji.png")
+    else:
+        return await bot.say("Nino can't do her best with too many arguments")
+
 
 
 """
