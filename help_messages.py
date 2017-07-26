@@ -95,11 +95,33 @@ Strings related to the color command
 """
 color_main_url = "https://serenesforest.net/wiki/index.php/Fire_Emblem_TCG"
 color_help_title = "There are currently 8 colors available for Cipher"
-color_help_games = ["Shadow Dragon and the Blade of Light, Shadow Dragon, Mystery of the Emblem, New Mystery of the Emblem, Echoes: Shadows of Valentia, Gaiden and Tokyo Mirage Sessions ♯FE\n\n","Awakening, #FE Genei Ibun Roku\n\n","Birthright and Revelations\n\n","Conquest and Revelations\n\n","Path of Radiance and Radiant Dawn\n\n","Binding Blade and Blazing Sword\n\n","Genealogy of the Holy War and Thracia 776\n\n","Heroes and Warriors\n\n"]
-color_help_colors = ["Red","Blue","White","Black","Green","Purple","Yellow","Colorless"]
-color_url = "https://serenesforest.net/wiki/index.php/Category:{color}Card"
+color_games = ["Shadow Dragon and the Blade of Light, Shadow Dragon, Mystery of the Emblem, New Mystery of the Emblem, Echoes: Shadows of Valentia, Gaiden and Tokyo Mirage Sessions ♯FE",
+                    "Awakening, #FE Genei Ibun Roku",
+                    "Birthright and Revelations",
+                    "Conquest and Revelations",
+                    "Path of Radiance and Radiant Dawn",
+                    "Binding Blade and Blazing Sword",
+                    "Genealogy of the Holy War and Thracia 776",
+                    "Heroes and Warriors"]
+color_names = ["Red", "Blue", "White", "Black", "Green", "Purple", "Yellow", "Colorless"]
+color_urls = {"Red": "http://i.imgur.com/U4XLZGb.png",
+              "Blue": "http://i.imgur.com/2fA7RTN.png",
+              "White": "http://i.imgur.com/Ol0DARf.png",
+              "Black": "http://i.imgur.com/0uoh0RQ.png",
+              "Green": "http://i.imgur.com/qtdGLsj.png",
+              "Yellow": "http://i.imgur.com/IdDCpzi.png",
+              "Purple": "http://i.imgur.com/HFQLjN0.png",
+              "Colorless": "http://i.imgur.com/Plb9TS6.png"}
+color_prefix = "https://serenesforest.net/wiki/index.php/Category:"
 color_error = "Please write a correct color of cards"
-color_dict = {"Red": 0xc60000, "Blue": 0x0118aa, "White": 0xffffff, "Black": 0x000000, "Green": 0x1bad16, "Yellow": 0xffef11, "Purple": 0x6b01a8, "Colorless": 0x919191}
+color_dict = {"Red": 0xc60000,
+              "Blue": 0x0118aa,
+              "White": 0xffffff,
+              "Black": 0x000000,
+              "Green": 0x1bad16,
+              "Yellow": 0xffef11,
+              "Purple": 0x6b01a8,
+              "Colorless": 0x919191}
 
 
 

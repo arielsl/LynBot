@@ -32,28 +32,25 @@ def get_card_image(url, cardname):
     imgpostfix = None
     try:
         req = Request(url+"png", headers={'User-Agent': 'Mozilla/5.0'})
-        source = urlopen(req).read().decode('UTF-8')
-        for link in re.findall("wiki/images/./../"+cardname+"\.png", source):
-            imgpostfix = link
-            break
+        source = urlopen(req).read()
+        soup = BeautifulSoup(source, "html.parser")
+        imgpostfix = soup.find("img").get("src")
         return help_messages.card_img_prefix + imgpostfix
     except urllib.error.HTTPError as e:
         pass
     try:
         req = Request(url+"jpg", headers={'User-Agent': 'Mozilla/5.0'})
-        source = urlopen(req).read().decode('UTF-8')
-        for link in re.findall("wiki/images/./../"+cardname+"\.jpg", source):
-            imgpostfix = link
-            break
+        source = urlopen(req).read()
+        soup = BeautifulSoup(source, "html.parser")
+        imgpostfix = soup.find("img").get("src")
         return help_messages.card_img_prefix + imgpostfix
     except urllib.error.HTTPError as e:
         pass
     try:
         req = Request(url+"jpeg", headers={'User-Agent': 'Mozilla/5.0'})
-        source = urlopen(req).read().decode('UTF-8')
-        for link in re.findall("wiki/images/./../"+cardname+"\.jpeg", source):
-            imgpostfix = link
-            break
+        source = urlopen(req).read()
+        soup = BeautifulSoup(source, "html.parser")
+        imgpostfix = soup.find("img").get("src")
         return help_messages.card_img_prefix + imgpostfix
     except urllib.error.HTTPError as e:
         pass
@@ -127,6 +124,33 @@ def deck_info(deck_url):
     info.append(link.get("href"))
     info.append(soup.find_all("div",{"class":"pi-data-value"})[4].get_text(" ", strip=True))
     return info
+
+
+"""
+Find the color info
+"""
+def get_color_info(color_url):
+    info = []
+    color_data = []
+    try:
+        req = Request(color_url, headers={'User-Agent': 'Mozilla/5.0'})
+        webpage = urlopen(req).read()
+    except urllib.error.HTTPError as e:
+        pass
+    soup = BeautifulSoup(webpage, "html.parser")
+    paragraphs = soup.find_all("p")
+    for p in paragraphs:
+        info.append(p.get_text(" ", strip=True))
+    if len(info) == 2:
+        color_data.append(info[0])
+    else:
+        color_data.append(info[0])
+        if len(info[1]) > 997:
+            info[1] = info[1][:997]
+            info[1] = info[1] + "..."
+        color_data.append(info[1])
+    return color_data
+
 
 
 

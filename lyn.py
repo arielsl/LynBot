@@ -148,6 +148,7 @@ async def card(*args):
             return await bot.say(imgurl)
 
 """
+COMPLETED
 command: !color colorName
 This command returns a url for the given color cards in Serenes Forest
 """
@@ -157,11 +158,11 @@ async def color(ctx, *args):
     if len(args) == 0:
         return await bot.send_message(channel, embed=embedhelper.embed_color_mssg())
     else:
-        color_given = args[0]
-        url = help_messages.color_url.format(color=color_given.capitalize())
+        color_given = args[0].capitalize()
+        url = help_messages.color_prefix + color_given + "Card"
         if urlhelper.url_exits(url):
-            return await bot.send_message(channel,
-                                          embed=embedhelper.embed_color_given_mssg(url, color_given.capitalize()))
+            em = embedhelper.embed_color_given_mssg(color_given)
+            return await bot.send_message(channel,embed=em)
         else:
             return await bot.say(help_messages.color_error)
 
